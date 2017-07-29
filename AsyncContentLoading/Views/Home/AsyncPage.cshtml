@@ -1,0 +1,79 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AsyncPage</title>
+    <link rel="stylesheet" href="~/asset/bootstrap.css" />
+    <script src="~/asset/jquery-1.12.4.min.js"></script>
+    <script src="~/asset/bootstrap.min.js"></script>
+
+
+
+
+    <script>
+        $(document).ready(function () {
+
+            $.get("./GetImageData/").done(function (data) {
+                for (i = 0; i < data.length; i++) {
+                    $("img[id=" + i + "]").attr('src', data[i]);
+                }
+            });
+        });
+    </script>
+
+
+
+
+</head>
+<body>
+    
+
+
+
+
+
+
+    <h2>Asynchrononys loading</h2>
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Bosphorus Bridge
+                </div>
+                <div class="panel-body">
+                    <div class="container">
+                        <div class="col-md-3">
+                            <img src="~/asset/loading.gif" style="width:200px;" id="0" />
+                        </div>
+                        <div class="col-md-3">
+                            <img src="~/asset/loading.gif" style="width:200px;" id="1" />
+                        </div>
+                        <div class="col-md-3">
+                            <img src="~/asset/loading.gif" style="width:200px;" id="2" />
+                        </div>
+                        <div class="col-md-3">
+                            <img src="~/asset/loading.gif" style="width:200px;" id="3" />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
